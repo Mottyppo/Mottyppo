@@ -1,36 +1,20 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img src="assets/banner-light.svg" alt="Matteo Mottinelli — @Mottyppo. Software, networks and computer vision." width="1280">
+  <img src="assets/banner-light.svg" alt="Matteo Mottinelli — @Mottyppo. Software development." width="1280">
 </picture>
 
-## Hi, I'm Matteo 🌿
+## About
 
-My projects in **Computer Science Engineering at the University of Brescia** span software development, network analysis and computer vision — from understanding TCP traffic to exploring how vision systems can help detect drowning early.
+I'm Matteo Mottinelli, with an academic background in **Computer Science Engineering at the University of Brescia**. My interests span software development, computer networks and computer vision.
 
-Here you'll find my university projects, experiments and thesis work.
+I'm **proficient in Flutter and Dart** for cross-platform application development. I also work with Python, Java and PHP, using Git for version control and LaTeX for technical documentation.
 
-### Selected work
-
-**01 / [Computer vision for early drowning detection](https://github.com/Mottyppo/tesi-triennale)**<br>
-My bachelor's thesis on computer vision techniques for early drowning detection. The repository includes the LaTeX sources and the [full thesis](https://github.com/Mottyppo/tesi-triennale/blob/master/main.pdf).<br>
-`Computer vision` · `Research` · `LaTeX`
-
-**02 / [Nauta Control Room](https://github.com/Mottyppo/programmazione-web)**<br>
-A university team project: a web portal for a drowning-detection system provider and its clients, covering technical configurations, commercial requests and operational reports.<br>
-`Web development` · `PHP` · `Team project`
-
-**03 / [TCP packet analysis with GNS3](https://github.com/Mottyppo/gns3-tcp-analysis)**<br>
-Python tools for analysing captured TCP traffic and extracting measurements for network experiments and reports.<br>
-`Python` · `GNS3` · `Networking`
-
-**04 / [Software Engineering project](https://github.com/Mottyppo/ingegneria-del-software)**<br>
-A Java application developed with a team for the Software Engineering course at UniBS, with application code and tests.<br>
-`Java` · `Software engineering` · `Team project`
-
-### Tools I work with
+### Technologies
 
 <p>
+  <img src="assets/icons/flutter.svg" alt="Flutter" width="36" height="36">&nbsp;&nbsp;
+  <img src="assets/icons/dart.svg" alt="Dart" width="36" height="36">&nbsp;&nbsp;
   <img src="assets/icons/python.svg" alt="Python" width="36" height="36">&nbsp;&nbsp;
   <img src="assets/icons/java.svg" alt="Java" width="36" height="36">&nbsp;&nbsp;
   <img src="assets/icons/php.svg" alt="PHP" width="44" height="36">&nbsp;&nbsp;
@@ -41,20 +25,16 @@ A Java application developed with a team for the Software Engineering course at 
   </picture>
 </p>
 
-Python · Java · PHP · Git · LaTeX
+Flutter · Dart · Python · Java · PHP · Git · LaTeX
 
-### Contribution garden
-
-A little snake tending to my GitHub contributions.
+### Contributions
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake.svg">
-  <img src="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake.svg" alt="Animated snake moving through Mottyppo's GitHub contribution calendar." width="100%">
+  <img src="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake.svg" alt="Animated snake moving through Mottyppo's GitHub contribution calendar.">
 </picture>
 
 ---
 
 [GitHub](https://github.com/Mottyppo) &nbsp; / &nbsp; [Instagram](https://www.instagram.com/matteo.motty/)
-
-<sub>Ho fame, come al solito 🍕</sub>
