@@ -29,8 +29,8 @@ jobs:
           github_user_name: Mottyppo
           github_token: ${{ secrets.GITHUB_TOKEN }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/contribution-snake.svg
+            dist/contribution-snake-dark.svg?palette=github-dark
 
       - name: Validate both SVGs before publishing
         shell: bash
@@ -39,7 +39,7 @@ jobs:
           from pathlib import Path
           from xml.etree import ElementTree
 
-          for name in ('github-snake.svg', 'github-snake-dark.svg'):
+          for name in ('contribution-snake.svg', 'contribution-snake-dark.svg'):
               path = Path('dist') / name
               root = ElementTree.parse(path).getroot()
               if root.tag != '{http://www.w3.org/2000/svg}svg':

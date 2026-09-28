@@ -30,9 +30,9 @@ Flutter · Dart · Python · Java · PHP · Git · LaTeX
 ### Contributions
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake.svg?v=2">
-  <img src="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/github-snake.svg?v=2" alt="Animated snake moving through Mottyppo's GitHub contribution calendar.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/contribution-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/contribution-snake.svg">
+  <img src="https://raw.githubusercontent.com/Mottyppo/Mottyppo/output/contribution-snake.svg" alt="Animated snake moving through Mottyppo's GitHub contribution calendar.">
 </picture>
 
 ---
