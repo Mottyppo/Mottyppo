@@ -1,0 +1,62 @@
+name: Contribution garden
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/snake.yml'
+
+permissions: {}
+
+concurrency:
+  group: contribution-garden
+  cancel-in-progress: false
+
+jobs:
+  grow:
+    name: Generate and publish contribution snakes
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Generate light and dark SVGs
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: Mottyppo
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/github-snake.svg?color_snake=#173b2b&color_dots=#e8eddf,#c7d9b6,#98ba86,#61935c,#2c7650
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#d4edb9&color_dots=#1d3026,#355b40,#558453,#85b375,#b2d59e
+
+      - name: Validate both SVGs before publishing
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+
+          for name in ('github-snake.svg', 'github-snake-dark.svg'):
+              path = Path('dist') / name
+              root = ElementTree.parse(path).getroot()
+              if root.tag != '{http://www.w3.org/2000/svg}svg':
+                  raise ValueError(f'{name} is not an SVG')
+              if path.stat().st_size < 1000:
+                  raise ValueError(f'{name} is unexpectedly small')
+              print(f'Validated {name}: {path.stat().st_size} bytes')
+          PY
+
+      # This step only runs after successful generation and validation.
+      # Failed refreshes leave the previously published images untouched.
+      - name: Publish SVGs to the output branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          keep_files: true
+          enable_jekyll: true
+          commit_message: 'Refresh contribution garden'
