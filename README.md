@@ -28,4 +28,4 @@ Flutter · Dart · Python · Java · PHP · Git · LaTeX
 
 ---
 
-[Instagram · @matteo.motty](https://www.instagram.com/matteo.motty/)
+[Instagram · @matteo.motty](https://www.instagram.com/matteo.motty/) &nbsp; · &nbsp; [LinkedIn](https://www.linkedin.com/in/matteo-mottinelli/)
