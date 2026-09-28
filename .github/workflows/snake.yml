@@ -24,13 +24,13 @@ jobs:
       contents: write
     steps:
       - name: Generate light and dark SVGs
-        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: Mottyppo
           github_token: ${{ secrets.GITHUB_TOKEN }}
           outputs: |
-            dist/contribution-snake.svg?color_snake=purple&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
-            dist/contribution-snake-dark.svg?palette=github-dark&color_snake=purple&color_dots=#161b22,#01311f,#034525,#0f6d31,#00c647
+            dist/contribution-snake.svg
+            dist/contribution-snake-dark.svg?palette=github-dark
 
       - name: Validate both SVGs before publishing
         shell: bash

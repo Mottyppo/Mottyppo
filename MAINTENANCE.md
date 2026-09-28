@@ -14,7 +14,7 @@ Keep this repository public, named `Mottyppo`, with a nonempty `README.md` on th
 
 The workflow runs daily at 04:17 UTC. It also runs when its file changes on `main`, or from **Actions → Contribution snake → Run workflow**.
 
-The SVG palettes match [Tobi Mey’s tutorial workflow](https://github.com/tobimey/tobimey/blob/main/.github/workflows/snake.yml): the default light palette and `palette=github-dark`. The workflow explicitly fixes the snake to `purple` (`#800080`) and specifies the same cell colors as the author’s generated SVGs. Validation rejects an image without the required purple snake. The calendar and snake route reflect this account’s own contributions.
+The workflow uses the main [Platane/snk action](https://github.com/Platane/snk#usage) directly, pinned to the verified `v3` commit. Its two SVG outputs use the official default light palette and `palette=github-dark`, without color overrides. The default snake is purple (`#800080`); validation checks that before publication. The calendar and snake route reflect this account’s own contributions.
 
 It reads `Mottyppo`'s contribution calendar using the repository's automatic `GITHUB_TOKEN`, generates two SVGs, validates both and publishes them to `output`. No personal access token, GitHub Pages site or paid service is required. A failed generation or validation does not replace the last successful images.
 
