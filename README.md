@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-editorial-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-editorial-light.png">
-  <img src="assets/banner-editorial-light.png" alt="Matteo Mottinelli — @Mottyppo. Abstract silver and violet ribbon banner." width="1280">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-personal-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-personal-light.png">
+  <img src="assets/banner-personal-light.png" alt="Matteo Mottinelli — @Mottyppo. Abstract silver and violet ribbon banner." width="1280">
 </picture>
 
 ## About me
