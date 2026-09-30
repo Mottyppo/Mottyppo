@@ -23,11 +23,21 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check calendar credential
+        env:
+          SNAKE_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+        run: |
+          if [ -z "$SNAKE_TOKEN" ]; then
+            echo '::warning::SNAKE_TOKEN is not configured. GITHUB_TOKEN may see an empty calendar when the profile is private; the last moving animation will be preserved.'
+          fi
+
       - name: Generate light and dark SVGs
         uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: Mottyppo
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Owner credential reads the private profile calendar; the job token
+          # remains the only credential used to publish repository files.
+          github_token: ${{ secrets.SNAKE_TOKEN || secrets.GITHUB_TOKEN }}
           outputs: |
             dist/contribution-snake.svg
             dist/contribution-snake-dark.svg?palette=github-dark
@@ -38,6 +48,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           from xml.etree import ElementTree
+          import re
 
           for name in ('contribution-snake.svg', 'contribution-snake-dark.svg'):
               path = Path('dist') / name
@@ -48,7 +59,22 @@ jobs:
                   raise ValueError(f'{name} does not contain the required purple snake')
               if path.stat().st_size < 1000:
                   raise ValueError(f'{name} is unexpectedly small')
-              print(f'Validated {name}: {path.stat().st_size} bytes')
+              style = root.find('{http://www.w3.org/2000/svg}style')
+              css = style.text or '' if style is not None else ''
+              head = re.search(r'@keyframes\s+s0\s*\{(.*?)\}\s*\.s\.s0', css, re.S)
+              positions = set()
+              if head:
+                  positions = {
+                      re.sub(r'\s+', '', value)
+                      for value in re.findall(r'transform:\s*translate\(([^)]+)\)', head.group(1))
+                  }
+              if len(positions) < 2:
+                  raise ValueError(
+                      f'{name}: the snake has no moving path. Contribution data may be unavailable; '
+                      'configure the owner SNAKE_TOKEN secret for a private profile. '
+                      'The previously published animation will remain unchanged.'
+                  )
+              print(f'Validated {name}: {path.stat().st_size} bytes, {len(positions)} head positions')
           PY
 
       # This step only runs after successful generation and validation.
