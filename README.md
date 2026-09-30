@@ -12,7 +12,7 @@ My main interest is back-end development, particularly with Java / Spring Boot a
 
 Over the years, I’ve worked as a freelance developer on small management systems and interactive applications, including games and experiences for themed events, using technologies such as Flutter and React.
 
-I’ve also worked with Laravel for full-stack web development and Python for Computer Vision, data analysis and automation.
+I’ve also worked with Laravel for full-stack web development and Python for computer vision, data analysis and automation.
 
 ## Tech Stack
 
